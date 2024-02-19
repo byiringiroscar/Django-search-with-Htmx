@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>People directory</title>
+    <script src="https://unpkg.com/htmx.org@1.9.5" integrity="sha384-xcuj3WpfgjlKF+FXhSQFQ0ZNr39ln+hwjN3npfM9VBnUskLolQAcN80McRIVOPuO" crossorigin="anonymous"></script>
+</head>
+<body id="container">
+
+<h3>
+    <span class="htmx-indicator">
+      ...
+   </span>
+</h3>
+
+<form>
+    {% csrf_token %}
+    <input class="form-control" type="search"
+           name="search" placeholder="Begin Typing To Search Users..."
+           hx-get="/search/results/"
+           hx-trigger="keyup changed, search"
+           hx-target="#search-results"
+           hx-indicator=".htmx-indicator">
+</form>
+
+<div id="search-results">
+    {% include "search_results.html" %}
+</div>
+
+</body>
+</html>
