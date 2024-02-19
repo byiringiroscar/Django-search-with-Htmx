@@ -8,9 +8,10 @@
 <body id="container">
 
 <h3>
+    Search Directory
     <span class="htmx-indicator">
       ...
-   </span>
+    </span>
 </h3>
 
 <form>
@@ -26,6 +27,42 @@
 <div id="search-results">
     {% include "search_results.html" %}
 </div>
+
+<style>
+    #container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    h3 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    .htmx-indicator {
+        display: inline-block;
+        margin-left: 10px;
+    }
+    form {
+        position: relative;
+    }
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        font-size: 18px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    #search-results {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    .highlight {  
+        background-color: #46ffb3;  
+    }
+</style>
 
 </body>
 </html>
